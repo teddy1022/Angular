@@ -1,12 +1,5 @@
-<p [class]="name">Hello, {{name}}</p>
+<app-header></app-header>
 
+<app-register></app-register>
 
-姓名
-<input type="text" (input)="nameChange($event)">
-<br>
-<br>
-信箱
-<input type="text" [(ngModel)]="email">
-{{email}}
-
-<app-child (parentAddSubName) = "addSub($event)" [parentname] = "name"></app-child>
+<app-footer></app-footer>

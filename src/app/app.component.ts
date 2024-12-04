@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ChildComponent } from "./child/child.component";
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from "./header/header.component";
+import { RegisterComponent } from "./register/register.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ChildComponent, FormsModule],
+  imports: [RouterOutlet, ChildComponent, FormsModule, HeaderComponent, RegisterComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
