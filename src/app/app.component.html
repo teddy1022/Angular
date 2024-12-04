@@ -8,4 +8,4 @@
 信箱
 <input type="text">
 
-<app-child [parentname] = "name"></app-child>
+<app-child (parentAddSubName) = "addSub($event)" [parentname] = "name"></app-child>

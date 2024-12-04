@@ -19,4 +19,8 @@ export class AppComponent {
     console.log(inputElement.value);
     
   }
+
+  addSub(str: string){
+    this.name += str;
+  }
 }
