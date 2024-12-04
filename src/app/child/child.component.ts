@@ -12,6 +12,7 @@ export class ChildComponent {
 
 @Output() parentAddSubName = new EventEmitter<string>();
 
+
 clickFunction(){
   this.parentAddSubName.emit("abc");
 }
