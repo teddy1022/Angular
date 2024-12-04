@@ -10,4 +10,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'tutorial';
+
+  nameChange(e :Event){
+    const inputElement = e.target as HTMLInputElement;
+    console.log(inputElement.value);
+    
+  }
 }
