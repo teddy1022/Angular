@@ -1,4 +1,6 @@
-<form action="" 
+<form 
+  [formGroup]="registerForm"
+  action="" 
   style="
     margin-left: 400px;
     margin-top: 50px;
@@ -10,12 +12,32 @@
     max-width: 400px;
 ">
 <h2 style="margin-top: 0;">Sign up</h2>
+
 <label for="">姓名</label>
-<input type="text" style="width: 100%; " >
+<input formControlName="senderName" type="text" style="width: 100%; " >
+@if(registerForm.get('senderName')?.invalid && 
+(registerForm.get('senderName')?.dirty || registerForm.get('senderName')?.touched)){
+  <small style="color: red;">姓名欄位不能為空</small>
+  <br>
+}
+
 <label for="">信箱</label>
-<input type="text" style="width: 100%; ">
+<input formControlName="senderEmail" type="text" style="width: 100%; ">
+@if(registerForm.get('senderEmail')?.invalid && (registerForm.get('senderEmail')?.dirty || registerForm.get('senderEmail')?.touched)){
+  <small style="color: red;">
+  @if(registerForm.get('senderEmail')?.hasError('required')){
+    信箱欄位不能為空
+  }
+  @if(registerForm.get('senderEmail')?.hasError('email')){
+    信箱格式不符
+  }
+  </small>
+ <br>
+}
+
 <label for="">密碼</label>
-<input type="password"  style="width: 100%; " >
+<input formControlName="senderPassword" type="password"  style="width: 100%; " >
+
 <label for="">確認密碼</label>
 <input type="password"  style="width: 100%; ">
 
